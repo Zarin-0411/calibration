@@ -1,7 +1,7 @@
 import numpy as np
 import cv2
 
-# Replace ALL values with your own calibration data!
+# Replace ALL values with own calibration data!
 img_pts = np.array([
     
     [971, 310],
