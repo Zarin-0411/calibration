@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 from datetime import datetime
 
-# ============= CONFIG =============
+
 
 IMAGE_PATH = "calibration/calib_image.jpeg"  
 SAVE_ON_ESC = True
@@ -12,7 +12,7 @@ FONT = cv2.FONT_HERSHEY_SIMPLEX
 FONT_SCALE = 0.7
 THICKNESS = 2
 
-# Paste your Homography from Step 5 here:
+# Homography from Step 5 here:
 H = np.array([
     [1.46942136e+00, -4.01685843e-01, -1.14808542e+03],
     [-1.92001571e-02, -2.15826917e-01,  1.24984536e+02],
@@ -20,9 +20,8 @@ H = np.array([
 ], dtype=np.float64)
 
 # Optional: predefined pixel points to annotate in batch
-PREDEFINED_POINTS = []  # e.g. [(867, 237), (1177, 438), (1497, 538), (888, 741)]
+PREDEFINED_POINTS = []  
 
-# ==================================
 
 def pixel_to_robot(u, v, H):
     p = np.array([u, v, 1.0], dtype=np.float64)
@@ -49,7 +48,7 @@ def draw_click(img, x, y, text):
     cv2.circle(img, (int(x), int(y)), 6, DOT_COLOR, -1, lineType=cv2.LINE_AA)
     put_label(img, x, y, text)
 
-# ------------- MAIN --------------
+
 
 img = cv2.imread(IMAGE_PATH)
 if img is None:
