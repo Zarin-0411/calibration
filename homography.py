@@ -1,9 +1,8 @@
 import numpy as np
 import cv2
 
-# Replace ALL values with own calibration data!
+# Replace ALL values with your own calibration data!
 img_pts = np.array([
-    
     [971, 310],
     [708, 247],
     [639, 423],
@@ -13,12 +12,12 @@ img_pts = np.array([
 ], dtype=np.float32)
 
 robot_pts = np.array([
+    [300 , 25],
+    [275, -50],
+    [325, -75],
+    [375, -25],
     [375, 50],
-    [-400, 75],
-    [-425, 25],
-    [-375, -25],
-    [400, -25],
-    [425, 25]
+    [325, 75]
     
 ], dtype=np.float32)
 
