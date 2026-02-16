@@ -14,14 +14,13 @@ THICKNESS = 2
 
 # Homography from Step 5 here:
 H = np.array([
-    [1.46942136e+00, -4.01685843e-01, -1.14808542e+03],
-    [-1.92001571e-02, -2.15826917e-01,  1.24984536e+02],
-    [ 6.25869811e-06, -7.04627411e-04,  1.00000000e+00]
+    [ 3.32657777e-02 , 3.16052736e-01 , 1.80829959e+02],
+    [3.01735696e-01 ,-2.77245326e-02 , -2.58319981e+02],
+    [ 2.45281257e-05 , 4.09932531e-05 , 1.00000000e+00]
 ], dtype=np.float64)
 
 # Optional: predefined pixel points to annotate in batch
 PREDEFINED_POINTS = []  
-
 
 def pixel_to_robot(u, v, H):
     p = np.array([u, v, 1.0], dtype=np.float64)
@@ -30,7 +29,7 @@ def pixel_to_robot(u, v, H):
     return float(pr[0]), float(pr[1])  # X, Y in mm
 
 def format_pair(u, v, X, Y):
-    # Matches your style: "867,237 -> 350,75" with integer-like formatting
+    
     def fmt_num(z):  # keep integers if close; otherwise one decimal
         if abs(z - round(z)) < 1e-3:
             return f"{int(round(z))}"
